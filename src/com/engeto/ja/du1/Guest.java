@@ -8,10 +8,7 @@ public class Guest {
 
     @Override
     public String toString() {
-        return "Guest{" +
-                "nameAndSurname='" + nameAndSurname + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+        return nameAndSurname +  " " + birthDate;
     }
 
     public Guest(String nameAndSurname, LocalDate birthDate) {

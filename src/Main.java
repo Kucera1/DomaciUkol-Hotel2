@@ -9,6 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
         Guest guest = new Guest("Adéla Malíková", LocalDate.of(1993, 1, 13));
         Guest guest1 = new Guest("Jan Dvořáček", LocalDate.of(1995, 5, 5));
 
@@ -35,7 +36,7 @@ public class Main {
         ListOfBookings listOfBookings = new ListOfBookings(List.of(booking));
         ListOfBookings listOfBookings1 = new ListOfBookings(List.of(booking1));
 
-        System.out.println(booking + " " + typeOfVacation.getTypeOfVacation());
-        System.out.println(booking1 + " " + typeOfVacation1.getTypeOfVacation());
+        System.out.println(booking);
+        System.out.println(booking1);
     }
 }
