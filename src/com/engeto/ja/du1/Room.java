@@ -11,7 +11,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return noOfRoom + ", " + beds + " " + "with Balcony:" +  balcony + ", " + "with Sea views:" + seaViews + ", " + "Price for night:" + priceForNight;
+        return noOfRoom + ", " + beds + " " + "with Balcony:" +  balcony + ", " + "with Sea views:" + seaViews + ", " + "Price for night:" + priceForNight + "Kč/noc";
     }
 
     public Room(int noOfRoom, String beds, boolean balcony, boolean seaViews, BigDecimal priceForNight) {

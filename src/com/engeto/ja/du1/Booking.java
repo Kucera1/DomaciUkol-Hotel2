@@ -9,6 +9,7 @@ public class Booking {
     private LocalDate from;
     private LocalDate to;
 
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -19,7 +20,7 @@ public class Booking {
                 '}';
     }
 
-    public Booking(List<Guest> guests, Room noOfRoom, LocalDate from, LocalDate to) {
+    public Booking(List<Guest> guests, Room noOfRoom, LocalDate from, LocalDate to, TypeOfVacation typeOfVacation) {
         this.guests = guests;
         this.noOfRoom = noOfRoom;
         this.from = from;

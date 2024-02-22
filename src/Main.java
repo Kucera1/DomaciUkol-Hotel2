@@ -1,9 +1,8 @@
 import com.engeto.ja.du1.*;
+import com.engeto.ja.du1.com.engeto.ja.du1.BookingManager;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -14,19 +13,21 @@ public class Main {
         Guest guest1 = new Guest("Jan Dvořáček", LocalDate.of(1995, 5, 5));
 
         Room room = new Room(1, "jednolůžkový pokoj, ", true, true, BigDecimal.valueOf(1000));
-        Room room1 = new Room(3, "trojlůžkový pokoj", false, true, BigDecimal.valueOf(2400));
+        Room room1 = new Room(3, "trojlůžkový pokoj,", false, true, BigDecimal.valueOf(2400));
 
-        Booking booking = new Booking(List.of(guest), room,  LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26));
-        Booking booking1 = new Booking(List.of(guest, guest1), room1, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9,14));
+        TypeOfVacation typeOfVacation = new TypeOfVacation("Rekreační pobyt.");
 
-        TypeOfVacation typeOfVacation = new TypeOfVacation("Pracovní pobyt.");
+        Booking booking = new Booking(List.of(guest), room, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), typeOfVacation);
+        Booking booking1 = new Booking(List.of(guest, guest1), room1, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), typeOfVacation);
+
+        typeOfVacation = new TypeOfVacation("Pracovní pobyt.");
         TypeOfVacation typeOfVacation1 = new TypeOfVacation("Rekreační pobyt.");
 
-        System.out.println(guest.getNameAndSurname() + "(" + guest.getBirthDate() +")" + " - " + typeOfVacation.getTypeOfVacation());
+        System.out.println(guest.getNameAndSurname() + "(" + guest.getBirthDate() + ")" + " - " + typeOfVacation.getTypeOfVacation());
         System.out.println("Pokoj číslo: " + room.getNoOfRoom() + ", " + room.getBeds() + " " + "Pokoj má balkón: " + room.isBalcony() + ", " + "Pokoj má výhled na moře: " + room.isSeaViews() + ", " + room.getPriceForNight() + "Kč/noc.");
-        System.out.println(booking.getFrom() + " - " + booking.getTo() );
+        System.out.println(booking.getFrom() + " - " + booking.getTo());
         System.out.println();
-        System.out.println(guest.getNameAndSurname() +"(" + guest.getBirthDate() + ")" + " a " + guest1.getNameAndSurname() + "(" + guest1.getBirthDate() + ")" + " - " + typeOfVacation1.getTypeOfVacation());
+        System.out.println(guest.getNameAndSurname() + "(" + guest.getBirthDate() + ")" + " a " + guest1.getNameAndSurname() + "(" + guest1.getBirthDate() + ")" + " - " + typeOfVacation1.getTypeOfVacation());
         System.out.println("Pokoj číslo: " + room1.getNoOfRoom() + ", " + room1.getBeds() + ", " + "Pokoj má balkón: " + room1.isBalcony() + ", " + "Pokoj má výhled na moře: " + room1.isSeaViews() + ", " + room1.getPriceForNight() + "Kč/noc.");
         System.out.println(booking1.getFrom() + " - " + booking1.getTo());
         System.out.println();
@@ -38,5 +39,16 @@ public class Main {
 
         System.out.println(booking);
         System.out.println(booking1);
+
+        BookingManager bookingManager = new BookingManager();
+        bookingManager.addBooking(booking);
+        bookingManager.addBooking(booking1);
+        bookingManager.getBookings();
+        bookingManager.getNumberOfWorkingBookings();
+        bookingManager.getAverageGuests();
+        bookingManager.clearBookings();
+        bookingManager.getBookings();
+
+
     }
 }
