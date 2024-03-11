@@ -5,12 +5,14 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+
 public class Main {
 
     public static void main(String[] args) {
 
         Guest guest = new Guest("Adéla Malíková", LocalDate.of(1993, 1, 13));
         Guest guest1 = new Guest("Jan Dvořáček", LocalDate.of(1995, 5, 5));
+
 
         Room room = new Room(1, "jednolůžkový pokoj, ", true, true, BigDecimal.valueOf(1000));
         Room room1 = new Room(3, "trojlůžkový pokoj,", false, true, BigDecimal.valueOf(2400));
@@ -39,16 +41,18 @@ public class Main {
 
         System.out.println(booking);
         System.out.println(booking1);
+        System.out.println();
 
         BookingManager bookingManager = new BookingManager();
         bookingManager.addBooking(booking);
         bookingManager.addBooking(booking1);
         bookingManager.getBookings();
+        System.out.println();
         bookingManager.getNumberOfWorkingBookings();
         bookingManager.getAverageGuests();
         bookingManager.clearBookings();
         bookingManager.getBookings();
 
+          }
 
-    }
 }
