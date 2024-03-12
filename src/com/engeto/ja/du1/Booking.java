@@ -8,7 +8,16 @@ public class Booking {
     private Room noOfRoom;
     private LocalDate from;
     private LocalDate to;
+    private boolean workingBookings;
 
+    public Booking(List<Guest> guests, Room noOfRoom, LocalDate from, LocalDate to, boolean workingBooking) {
+        this.guests = guests;
+        this.noOfRoom = noOfRoom;
+        this.from = from;
+        this.to = to;
+        this.workingBookings = workingBooking;
+
+    }
 
     @Override
     public String toString() {
@@ -17,14 +26,8 @@ public class Booking {
                 ", noOfRoom=" + noOfRoom +
                 ", from=" + from +
                 ", to=" + to +
+                ", workingBooking=" + workingBookings +
                 '}';
-    }
-
-    public Booking(List<Guest> guests, Room noOfRoom, LocalDate from, LocalDate to, TypeOfVacation typeOfVacation) {
-        this.guests = guests;
-        this.noOfRoom = noOfRoom;
-        this.from = from;
-        this.to = to;
     }
 
     public List<Guest> getGuests() {
@@ -58,5 +61,20 @@ public class Booking {
     public void setTo(LocalDate to) {
         this.to = to;
     }
+
+    public boolean isWorkingBooking() {
+        return workingBookings;
+    }
+
+    public void setWorkingBooking(boolean workingBooking) {
+        this.workingBookings = workingBooking;
+    }
+
+
+    public boolean isWorkingBookings() {
+        return workingBookings;
+    }
 }
+
+
 

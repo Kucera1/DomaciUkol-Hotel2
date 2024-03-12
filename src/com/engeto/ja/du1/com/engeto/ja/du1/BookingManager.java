@@ -22,8 +22,9 @@ public class BookingManager {
     public void getNumberOfWorkingBookings() {
         int count = 0;
         for (Booking booking : bookings) {
-            if (booking.getFrom().isBefore(booking.getTo())) {
-                count++;
+            if (booking.isWorkingBookings() == true) {
+               count++;
+
             }
         }
         System.out.println("Number of working bookings: " + count);
